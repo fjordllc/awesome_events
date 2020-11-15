@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
@@ -50,3 +50,6 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'hamlit-rails', '~> 0.2.3'
+gem 'html2haml', '~> 2.2.0'
