@@ -8,4 +8,8 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = yield
+    %header.navbar.navbar-expand-sm.navbar-light.bg-light
+      .container
+        = link_to "AwesomeEvents", root_path, class: "navbar-brand"
+    .container
+      = yield
