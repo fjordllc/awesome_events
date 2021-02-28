@@ -1,24 +1,10 @@
-# README
+# AwesomeEvents
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+『パーフェクト Ruby on Rails』のサンプルアプリ。
 
-Things you may want to cover:
+## インストール
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+$ brew install vips
+$ bin/setup
+```
