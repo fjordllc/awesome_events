@@ -1,1 +1,1 @@
-json.status "ok"
+json.status 'ok'
