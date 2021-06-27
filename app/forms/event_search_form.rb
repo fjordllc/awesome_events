@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class EventSearchForm
   include ActiveModel::Model
   include ActiveModel::Attributes
@@ -8,7 +10,7 @@ class EventSearchForm
   def search
     Event.search(
       keyword_for_search,
-      where: { start_at: { gt: start_at }},
+      where: { start_at: { gt: start_at } },
       page: page,
       per_page: 10
     )
@@ -25,6 +27,6 @@ class EventSearchForm
   private
 
   def keyword_for_search
-    keyword.presence || "*"
+    keyword.presence || '*'
   end
 end

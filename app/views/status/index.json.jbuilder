@@ -1,1 +1,3 @@
-json.status "ok"
+# frozen_string_literal: true
+
+json.status 'ok'

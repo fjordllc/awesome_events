@@ -1,14 +1,16 @@
+# frozen_string_literal: true
+
 class Event < ApplicationRecord
-  searchkick language: "japanese"
+  searchkick language: 'japanese'
 
   has_one_attached :image, dependent: false
   has_many :tickets, dependent: :destroy
-  belongs_to :owner, class_name: "User"
+  belongs_to :owner, class_name: 'User'
 
   validates :image,
             content_type: %i[png jpg jpeg],
             size: { less_than_or_equal_to: 10.megabytes },
-            dimension: { width: { max: 2000}, height: { max: 2000 } }
+            dimension: { width: { max: 2000 }, height: { max: 2000 } }
   validates :name, length: { maximum: 50 }, presence: true
   validates :place, length: { maximum: 100 }, presence: true
   validates :content, length: { maximum: 2000 }, presence: true
@@ -22,16 +24,17 @@ class Event < ApplicationRecord
 
   def created_by?(user)
     return false unless user
+
     owner_id == user.id
   end
 
   def search_data
     {
-        name: name,
-        place: place,
-        content: content,
-        owner_name: owner&.name,
-        start_at: start_at
+      name: name,
+      place: place,
+      content: content,
+      owner_name: owner&.name,
+      start_at: start_at
     }
   end
 
@@ -41,7 +44,7 @@ class Event < ApplicationRecord
     return unless start_at && end_at
 
     if start_at >= end_at
-      errors.add(:start_at, "は終了時間よりも前に設定してください")
+      errors.add(:start_at, 'は終了時間よりも前に設定してください')
     end
   end
 
