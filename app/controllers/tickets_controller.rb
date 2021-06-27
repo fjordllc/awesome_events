@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TicketsController < ApplicationController
   def new
     raise ActionController::RoutingError, 'ログイン状態で TicketsController#new にアクセス'

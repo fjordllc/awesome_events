@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class EventSearchForm
   include ActiveModel::Model
   include ActiveModel::Attributes
