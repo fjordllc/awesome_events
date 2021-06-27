@@ -14,7 +14,7 @@ module SignInHelper
     when respond_to?(:get)
       get "/auth/github/callback"
     else
-      raise NotImplementedError.new
+      raise NotImplementedError
     end
 
     @current_user = user
