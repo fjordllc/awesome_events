@@ -22,6 +22,7 @@ jobs:
       - name: Build and test
         env:
           RAILS_ENV: test
+          RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
         run: |
           sudo apt-get -yqq install libsqlite3-dev
           bundle install --jobs 4 --retry 3
